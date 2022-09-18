@@ -37,7 +37,7 @@ def get_sort_drinks(file):
     drinks = excel_data.to_dict(orient='records')
     for drink in drinks:
         drinks_with_category[drink['Категория']].append(drink)
-    return(drinks_with_category)
+    return drinks_with_category
 
 
 def main():
