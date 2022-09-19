@@ -12,8 +12,8 @@ def get_working_years():
     return current_year - foundation_year
 
 
-def get_excel_data(file):
-    excel_data = pandas.read_excel(file, sheet_name='Лист1')
+def get_excel_data(filepath):
+    excel_data = pandas.read_excel(filepath, sheet_name='Лист1')
     return excel_data.to_dict(orient='records')
 
 
