@@ -27,7 +27,7 @@ def determine_year(number):
     return 'лет'
 
 
-def get_sort_drinks(file):
+def get_sorting_drinks(file):
     excel_data = pandas.read_excel(file,
                                    sheet_name='Лист1',
                                    na_values='a',
@@ -48,7 +48,7 @@ def main():
     template = env.get_template('template.html')
 
     working_year = get_working_years()
-    drinks = get_sort_drinks('wine.xlsx')
+    drinks = get_sorting_drinks('wine.xlsx')
     rendered_page = template.render(
         sub_title=f'Уже {working_year} {determine_year(working_year)} с вами',
         drinks=drinks              
