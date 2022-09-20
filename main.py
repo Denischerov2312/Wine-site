@@ -1,3 +1,4 @@
+import os
 import datetime
 import collections
 import argparse
@@ -5,6 +6,10 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 import pandas
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from dotenv import load_dotenv
+
+
+DRINKS_FILE=os.getenv('DRINKS_FILE', default='wine.xlsx')
 
 
 def get_working_years():
@@ -69,4 +74,5 @@ def main():
 
 
 if __name__ == '__main__':
+    load_dotenv()
     main()
