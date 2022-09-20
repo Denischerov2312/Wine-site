@@ -1,5 +1,6 @@
 import datetime
 import collections
+import argparse
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 import pandas
@@ -26,6 +27,12 @@ def determine_year(number):
         return 'года'
     return 'лет'
 
+def get_drinks_filepath():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-f','--file', help='Путь до xl файла с напитками', default='wine.xlsx')
+    args = parser.parse_args()
+    return args.file
+
 
 def get_sorting_drinks(file):
     excel_data = pandas.read_excel(file,
@@ -48,7 +55,7 @@ def main():
     template = env.get_template('template.html')
 
     working_year = get_working_years()
-    drinks = get_sorting_drinks('wine.xlsx')
+    drinks = get_sorting_drinks(get_drinks_filepath())
     rendered_page = template.render(
         sub_title=f'Уже {working_year} {determine_year(working_year)} с вами',
         drinks=drinks              
