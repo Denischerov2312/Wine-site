@@ -18,11 +18,6 @@ def get_working_years():
     return current_year - foundation_year
 
 
-def get_excel_data(filepath):
-    excel_data = pandas.read_excel(filepath, sheet_name='Лист1')
-    return excel_data.to_dict(orient='records')
-
-
 def determine_year(number):
     last_number = int(str(number)[-1])
     last_two_number = int(str(number)[-2:])
