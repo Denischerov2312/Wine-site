@@ -115,33 +115,33 @@
         </div>
         <div class="row">
         {% for category_name, category in drinks.items() %}
-            <div class="col-12 section-title text-center mb-5">
-              <h2 class="d-block">{{category_name}}</h2>
-            </div>
-            <div class="row">
-            {% for drink in category %}
-                <div class="col-lg-4 mb-5 col-md-6">
-            <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src="images/{{drink.Картинка}}" alt="Image" class="img-fluid">
-                {% if drink.Акция %}
-                <img src="assets/profitable.png" style="width:10rem;height: 10rem;position:absolute;right: -20px;top: -20px;">
-                {% endif %}
-              <div>
-                <h3 class="heading mt-3 mb-3 text-dark">{{drink.Название}}</h3>
-                {% if drink.Сорт %}
-                <p>
-                  Сорт винограда - {{drink.Сорт}}<br/>
-                {% endif %}
-                  <span class="price">{{drink.Цена}} р.</span>
-                </p>
-              </div>
-            </div>
+          <div class="col-12 section-title text-center mb-5">
+            <h2 class="d-block">{{category_name}}</h2>
           </div>
+            <div class="row">
+              {% for drink in category %}
+                <div class="col-lg-4 mb-5 col-md-6">
+                  <div class="wine_v_1 text-center pb-4 pt-5">
+                    <img src="images/{{drink.Картинка}}" alt="Image" class="img-fluid">
+                    {% if drink.Акция %}
+                      <img src="assets/profitable.png" style="width:10rem;height: 10rem;position:absolute;right: -20px;top: -20px;">
+                    {% endif %}
+                    <div>
+                      <h3 class="heading mt-3 mb-3 text-dark">{{drink.Название}}</h3>
+                      <p>
+                        {% if drink.Сорт %}
+                          Сорт винограда - {{drink.Сорт}}<br/>
+                        {% endif %}
+                        <span class="price">{{drink.Цена}} р.</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
             {% endfor %}
             </div>
         {% endfor %}
+        </div>
       </div>
-    </div>
 
     <div class="hero-2" style="background-image: url('assets/hero_2.jpg');">
     <div><a id="feedback"></a></div>
