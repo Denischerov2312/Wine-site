@@ -9,9 +9,6 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from dotenv import load_dotenv
 
 
-DRINKS_FILE=os.getenv('DRINKS_FILE', default='wine.xlsx')
-
-
 def get_operating_years():
     foundation_year = 1920
     current_year = datetime.datetime.now().year
