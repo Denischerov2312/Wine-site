@@ -34,8 +34,8 @@ def get_drinks_filepath():
     return args.file
 
 
-def get_sorting_drinks(file):
-    excel_data = pandas.read_excel(file,
+def get_sorting_drinks(filepath):
+    excel_data = pandas.read_excel(filepath,
                                    sheet_name='Лист1',
                                    na_values='a',
                                    keep_default_na=False
