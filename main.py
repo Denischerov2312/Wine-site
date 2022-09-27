@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 DRINKS_FILE=os.getenv('DRINKS_FILE', default='wine.xlsx')
 
 
-def get_working_years():
+def get_operating_years():
     foundation_year = 1920
     current_year = datetime.datetime.now().year
     return current_year - foundation_year
@@ -55,10 +55,10 @@ def main():
          )
     template = env.get_template('template.html')
 
-    working_year = get_working_years()
+    operating_years = get_operating_years()
     drinks = get_sorting_drinks(get_drinks_filepath())
     rendered_page = template.render(
-        sub_title=f'Уже {working_year} {determine_year(working_year)} с вами',
+        sub_title=f'Уже {operating_years} {determine_year(operating_years)} с вами',
         drinks=drinks              
                    )
 
