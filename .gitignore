@@ -1,6 +1,8 @@
 env/
 index.html
 .replit
+poetry.lock
+.env
 
 # Logs and databases #
 ######################
