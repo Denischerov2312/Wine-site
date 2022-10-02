@@ -18,9 +18,9 @@ def get_operating_years():
 def determine_year(number):
     last_number = int(str(number)[-1])
     last_two_number = int(str(number)[-2:])
-    if last_number in range(1, 5) and last_two_number not in range(11, 20):
-        if last_number == 1:
-            return 'год'
+    if last_number == 1:
+        return 'год'
+    elif last_number in range(2, 5) and last_two_number not in range(11, 20):
         return 'года'
     return 'лет'
 
@@ -67,4 +67,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    print(determine_year(125))
